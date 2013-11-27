@@ -50,6 +50,13 @@ gem build
 3.- Considerar su publicacion
 gem push
 
+## Ampliación práctica 11
+Considere la Gema para la representación de Matrices que ha desarrollado en prácticas anteriores. Los objetivos de esta práctica son cuatro:
+1.-Documentar la gema (utlizando RDOC).
+2.-Desarrollar métodos con la filosofía de la programación funcional.
+3.-Utilizar métodos como 'map/collect', 'inject/reduce', 'upto' o 'times' para implementar la suma y el producto de matrices.
+4.-Generar la documentación de la Gema.
+
 ## Autores
 
 Autores: Iván Cabaleiro Escudero y Maurizio A. Rendón.
