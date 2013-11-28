@@ -81,7 +81,7 @@ class Matriz_dispersa < Matriz
 
   #Calcula el elemento maximo, optimizado para Matriz_dispersa
   def max
-    max = -10000
+    max = @m[0][0]
     for i in @m.keys do
 	for j in @m[i].keys do
 	    if (@m[i][j] > max) then
@@ -94,7 +94,7 @@ class Matriz_dispersa < Matriz
 
    #Calcula el menor elemento, optimizado para Matriz_dispersa
    def min
-    min = 10000
+    min = @m[0][0]
     for i in @m.keys do
         for j in @m[i].keys do
             if (@m[i][j] < min) then

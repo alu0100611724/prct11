@@ -25,7 +25,7 @@ class Matriz_densa < Matriz
 
 	#Busca el elemento mayor de la matriz densa 
 	def max
-		max = -10000
+		max = @m[0][0]
 		for i in 0...@fi 
 			for k in 0...@co
 				if (@m[i][k] > max) then
@@ -38,7 +38,7 @@ class Matriz_densa < Matriz
 
 	#Busca el menor elemento dentro de la matriz densa
 	def min
-                min = 10000
+                min = @m[0][0]
                 for i in 0...fi
                         for k in 0...co
                                 if @m[i][k] < min then
