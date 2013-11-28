@@ -60,7 +60,7 @@ class Matriz
         def -(o)
                 @result = @m
 		@fi.times do |i|
-      		 	@co.times do |k|
+      		 	@co.times do |j|
                                 @result[i][k] = @m[i][k] - o[i][k]
                         end
                 end
