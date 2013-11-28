@@ -11,7 +11,7 @@ class Matriz_densa < Matriz
         end
 
 	def max
-		max = @m[0][0]
+		max = -10000
 		for i in 0...@fi 
 			for k in 0...@co
 				if (@m[i][k] > max) then
@@ -23,7 +23,7 @@ class Matriz_densa < Matriz
 	end
 
 	def min
-                min = @m[0][0]
+                min = 10000
                 for i in 0...fi
                         for k in 0...co
                                 if @m[i][k] < min then

@@ -12,7 +12,6 @@ class SparseVector
     if  @vector[i].class == nil.class
 	0
     else
-	puts("aa")
 	@vector[i]
     end 
   end
@@ -48,7 +47,6 @@ class Matriz_dispersa < Matriz
 
   def [](i)
     if @m[i].class == SparseVector then
-	puts("bb")
 	@m[i]
     else
 	0
