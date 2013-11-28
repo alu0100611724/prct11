@@ -1,3 +1,13 @@
+# = gcd.rb
+#
+# Autor:: Ivan Cabaleiro Escuderos.
+# Autor:: Maurizio A. Rendon Mattogno.
+# Web:: https://github.com/alu0100611724/prct11.git
+#
+#
+# == Funcion gcd(u, v)
+#
+# Descripcion: Esta funcion calcula el maximo comun divisor
 def gcd(u, v)
   u, v = u.abs, v.abs
   if (u==0 or v==0) #Con esta modificación podemos usar esta función tb para reducir

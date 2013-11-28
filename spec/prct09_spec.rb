@@ -28,7 +28,7 @@ describe Matriz do
 		@mdis.fi.should == 3
 		@mdis.co.should == 3
 	end
-	it "Se debe acceder a una posición de la matriz dispersa" do
+	it "Se debe acceder a una posicion de la matriz dispersa" do
 		@mdis[0][0].should == 1
 	end
 

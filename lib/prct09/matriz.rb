@@ -1,7 +1,19 @@
+# = matriz.rb
+#
+# Autor:: Ivan Cabaleiro Escuderos.
+# Autor:: Maurizio A. Rendon Mattogno.
+# Web:: https://github.com/alu0100611724/prct11.git
+#
+#
+# == Clase Matriz
+#
+# Clase general para el uso de las matrices
+# * mostrar ()
+# * [] (n)
+# * Operadores +,-,*
 class Matriz
 	#Variable
 	attr_accessor :fi, :co
-	#attr_accessor :m
 	
 	def initialize (fi, co)
 		raise ArgumentError, 'El parametro debe ser entero' unless fi.is_a? Integer
@@ -10,6 +22,7 @@ class Matriz
 		@co = co
 	end
 
+	#Metodo de instancia to_s
 	def mostrar()
 		texto=""
 		for i in 0...@fi do
@@ -23,6 +36,7 @@ class Matriz
 		texto
 	end
 
+	#Metodo para acceder a la posicion del array indicado por el indice
 	def [](n)
 		raise ArgumentError, "El parametro debe ser entero" unless n.is_a? Integer
 		if (n>=0) then
@@ -32,14 +46,17 @@ class Matriz
 		end
 	end
 
+	#Operador suma
 	def +(o)
-			for i in 0...@fi do
-      	for j in 0...@co do
-        	@m[i][j] = @m[i][j] + o[i][j]
-      	end
-    	end
-			return @m
-end
+		for i in 0...@fi do
+      			for j in 0...@co do
+        			@m[i][j] = @m[i][j] + o[i][j]
+      			end
+    		end
+		return @m
+	end
+
+	#Operador resta
         def -(o)
                 @result = @m
                 for i in 0...@m.length do
@@ -50,6 +67,7 @@ end
                 return @result
         end
 
+	#Operador multiplicacion
 	def *(o)
 		tam = @m.length
 		@result = Array.new(tam, Array.new(tam ,0))

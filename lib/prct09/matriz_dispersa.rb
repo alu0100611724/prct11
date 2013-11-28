@@ -1,5 +1,18 @@
 require 'prct09/matriz.rb'
 
+# = matriz_dispersa.rb
+#
+# Autor:: Ivan Cabaleiro Escuderos.
+# Autor:: Maurizio A. Rendon Mattogno.
+# Web:: https://github.com/alu0100611724/prct11.git
+#
+#
+# == Clase SpareVector
+#
+# Clase que contiene un hash.
+# * [] (i)
+# * to_s ()
+# * keys ()
 class SparseVector 
   attr_accessor :vector
 
@@ -8,6 +21,7 @@ class SparseVector
     @vector = @vector.merge!(h)
   end
 
+  #Acceso a la posicion i del hash
   def [](i)
     if  @vector[i].class == nil.class
 	0
@@ -19,11 +33,22 @@ class SparseVector
   def to_s
     @vector.to_s
   end
+
+  #Retorna las llaves de acceso del hash
   def keys
     @vector.keys
   end
 end
 
+#
+# == Clase Matriz_dispersa
+#
+# Clase concreta de Matriz para el uso de las matrices dispersas (mas de un 60% de ceros).
+# * [] (i)
+# * max ()
+# * min ()
+# * to_den ()
+# * Operadores +,-,*
 class Matriz_dispersa < Matriz
 
   attr_accessor :m
@@ -45,6 +70,7 @@ class Matriz_dispersa < Matriz
     super(fi+1, co+1)
   end
 
+  #Acceso al elemento i
   def [](i)
     if @m[i].class == SparseVector then
 	@m[i]
@@ -53,6 +79,7 @@ class Matriz_dispersa < Matriz
     end
   end
 
+  #Calcula el elemento maximo, optimizado para Matriz_dispersa
   def max
     max = -10000
     for i in @m.keys do
@@ -64,6 +91,8 @@ class Matriz_dispersa < Matriz
     end
     max
    end
+
+   #Calcula el menor elemento, optimizado para Matriz_dispersa
    def min
     min = 10000
     for i in @m.keys do
@@ -79,6 +108,7 @@ class Matriz_dispersa < Matriz
 		return @m
 	 end
 
+	 #Convierte una matriz dispersa a densa.
 	 def to_den
 			a = Array.new(@fi)
 			for i in 0...@fi
@@ -90,6 +120,7 @@ class Matriz_dispersa < Matriz
 			end
 			return Matriz_densa.new(a)
 	 end
+
 	 def -(o)
 		a = self.to_den
 		if o.class == Matriz_dispersa then

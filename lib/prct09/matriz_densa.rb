@@ -1,5 +1,18 @@
 require 'prct09/matriz.rb'
 
+# = matriz_densa.rb
+#
+# Autor:: Ivan Cabaleiro Escuderos.
+# Autor:: Maurizio A. Rendon Mattogno.
+# Web:: https://github.com/alu0100611724/prct11.git
+#
+#
+# == Clase Matriz_densa
+#
+# Clase concreta de la clase Matriz para el uso de las matrices densas.
+#
+# * max ()
+# * min ()
 class Matriz_densa < Matriz
 
 	attr_accessor :m
@@ -10,6 +23,7 @@ class Matriz_densa < Matriz
 		super(matriz.length, matriz[0].length)
         end
 
+	#Busca el elemento mayor de la matriz densa 
 	def max
 		max = -10000
 		for i in 0...@fi 
@@ -22,6 +36,7 @@ class Matriz_densa < Matriz
 		max
 	end
 
+	#Busca el menor elemento dentro de la matriz densa
 	def min
                 min = 10000
                 for i in 0...fi
