@@ -14,9 +14,9 @@ require 'prct09/matriz.rb'
 # * max ()
 # * min ()
 class Matriz_densa < Matriz
-
+	#Variable que contiene los valores de la matriz
 	attr_accessor :m
-
+	#Recibe una matriz, la almacena en @m y llama a super con los valores de fila y columna
         def initialize (matriz)
                raise ArgumentError, 'El parametro debe ser una matriz' unless matriz.is_a? Array
                @m = matriz

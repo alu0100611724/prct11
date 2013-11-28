@@ -155,10 +155,8 @@
 
 <p>Clase concreta de <a href="Matriz.html">Matriz</a> para el uso de las
 matrices dispersas (mas de un 60% de ceros).</p>
-<ul><li><dl class="rdoc-list label-list"><dt>
-<dd>
-<p>(i)</p>
-</dd></dl>
+<ul><li>
+<p>&#39;[]&#39; (i)</p>
 </li><li>
 <p>max ()</p>
 </li><li>
@@ -195,7 +193,7 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
         <div class="method-description">
         
-        
+        <p>Variable con los indices hash y sus valores asociados</p>
         
         </div>
       </div>
@@ -222,7 +220,8 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
         <div class="method-description">
           
-          
+          <p>Recibe un hash y lo almacena en nuestra estructura, llama a super con el
+valor maximo de fila y columna</p>
           
           
             <div class="method-calls-super">
@@ -233,7 +232,7 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 56</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">h</span> = {})
   <span class="ruby-identifier">fi</span>,<span class="ruby-identifier">co</span>= <span class="ruby-value">0</span>,<span class="ruby-value">0</span>
   <span class="ruby-ivar">@m</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>({})
@@ -279,13 +278,13 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
         <div class="method-description">
           
-          
+          <p>Convierte la matriz en densa y llama al operador de la superclase</p>
           
           
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 150</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 153</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">o</span>)
         <span class="ruby-identifier">a</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_den</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Matriz_dispersa</span> <span class="ruby-keyword">then</span>
@@ -317,13 +316,15 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
         <div class="method-description">
           
-          
+          <p>Operador suma optimizado para matrices dispersas, si el argumento no es <a
+href="Matriz_dispersa.html">Matriz_dispersa</a> convierte la dispersa en
+densa y llama al operador de la superclase</p>
           
           
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 137</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">o</span>)
   <span class="ruby-identifier">a</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_den</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Matriz_dispersa</span> <span class="ruby-keyword">then</span>
@@ -360,13 +361,15 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
         <div class="method-description">
           
-          
+          <p>Operador resta optimizado para matrices dispersas, si el argumento no es <a
+href="Matriz_dispersa.html">Matriz_dispersa</a> convierte la dispersa en
+densa y llama al operador de la superclase</p>
           
           
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 125</span>
  <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">o</span>)
         <span class="ruby-identifier">a</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_den</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Matriz_dispersa</span> <span class="ruby-keyword">then</span>
@@ -409,7 +412,7 @@ matrices dispersas (mas de un 60% de ceros).</p>
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 74</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">i</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SparseVector</span> <span class="ruby-keyword">then</span>
       <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>]
@@ -447,9 +450,9 @@ href="Matriz_dispersa.html">Matriz_dispersa</a></p>
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
-  <span class="ruby-identifier">max</span> = <span class="ruby-value">-10000</span>
+  <span class="ruby-identifier">max</span> = <span class="ruby-ivar">@m</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@m</span>.<span class="ruby-identifier">keys</span> <span class="ruby-keyword">do</span>
       <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">keys</span> <span class="ruby-keyword">do</span>
           <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max</span>) <span class="ruby-keyword">then</span>
@@ -489,9 +492,9 @@ href="Matriz_dispersa.html">Matriz_dispersa</a></p>
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 96</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
- <span class="ruby-identifier">min</span> = <span class="ruby-value">10000</span>
+ <span class="ruby-identifier">min</span> = <span class="ruby-ivar">@m</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@m</span>.<span class="ruby-identifier">keys</span> <span class="ruby-keyword">do</span>
      <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">keys</span> <span class="ruby-keyword">do</span>
          <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span>) <span class="ruby-keyword">then</span>
@@ -530,7 +533,7 @@ href="Matriz_dispersa.html">Matriz_dispersa</a></p>
 
           
           <div class="method-source-code" id="to_den-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 112</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz_dispersa.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_den</span>
                <span class="ruby-identifier">a</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fi</span>)
                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@fi</span>

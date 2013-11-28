@@ -175,10 +175,8 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 <p>Clase general para el uso de las matrices</p>
 <ul><li>
 <p>mostrar ()</p>
-</li><li><dl class="rdoc-list label-list"><dt>
-<dd>
-<p>(n)</p>
-</dd></dl>
+</li><li>
+<p>&#39;[]&#39; (n)</p>
 </li><li>
 <p>Operadores +,-,*</p>
 </li></ul>
@@ -209,7 +207,7 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
         <div class="method-description">
         
-        <p>Variable</p>
+        <p>Variable con el numero de columnas</p>
         
         </div>
       </div>
@@ -222,7 +220,7 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
         <div class="method-description">
         
-        <p>Variable</p>
+        <p>Variable con el numero de filas</p>
         
         </div>
       </div>
@@ -249,13 +247,13 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
         <div class="method-description">
           
-          
+          <p>Recibe el numero de filas y columnas de la matriz</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">fi</span>, <span class="ruby-identifier">co</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;El parametro debe ser entero&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fi</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;El parametro debe ser entero&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">co</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -297,13 +295,13 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">o</span>)
         <span class="ruby-identifier">tam</span> = <span class="ruby-ivar">@m</span>.<span class="ruby-identifier">length</span>
         <span class="ruby-ivar">@result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tam</span>, <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tam</span> ,<span class="ruby-value">0</span>))
-        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">tam</span> <span class="ruby-keyword">do</span>
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">tam</span> <span class="ruby-keyword">do</span>
-                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">tam</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@fi</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                 <span class="ruby-ivar">@co</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>      
+                        <span class="ruby-ivar">@fi</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
                                 <span class="ruby-ivar">@result</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">o</span>[<span class="ruby-identifier">k</span>][<span class="ruby-identifier">j</span>]
                         <span class="ruby-keyword">end</span>
                 <span class="ruby-keyword">end</span>
@@ -339,10 +337,10 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 50</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">o</span>)
-        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@fi</span> <span class="ruby-keyword">do</span>
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@co</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@fi</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                 <span class="ruby-ivar">@co</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
                         <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">o</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
                 <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
@@ -377,11 +375,11 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">o</span>)
         <span class="ruby-ivar">@result</span> = <span class="ruby-ivar">@m</span>
-        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@m</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">do</span>
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">length</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@fi</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-ivar">@co</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
                         <span class="ruby-ivar">@result</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>] = <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">o</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>]
                 <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
@@ -416,7 +414,7 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">n</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;El parametro debe ser entero&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">n</span><span class="ruby-operator">&gt;=</span><span class="ruby-value">0</span>) <span class="ruby-keyword">then</span>
@@ -454,7 +452,7 @@ href="https://github.com/alu0100611724/prct11.git">github.com/alu0100611724/prct
 
           
           <div class="method-source-code" id="mostrar-source">
-            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 26</span>
+            <pre><span class="ruby-comment"># File lib/prct09/matriz.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">mostrar</span>()
         <span class="ruby-identifier">texto</span>=<span class="ruby-string">&quot;&quot;</span>
         <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@fi</span> <span class="ruby-keyword">do</span>

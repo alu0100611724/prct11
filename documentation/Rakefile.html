@@ -116,6 +116,11 @@ end
 desc &quot;build HTML&quot;
 task :html do
         sh &quot;rspec -Ilib ./lib/* -Ispec spec/prct09_spec.rb --format html &gt; pruebas.html&quot;
+end
+
+desc &quot;build documentarion&quot;
+task :rdoc do
+        sh &quot;rdoc -a -o documentation&quot;
 end</pre>
 
 </div>

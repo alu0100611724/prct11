@@ -9,12 +9,15 @@
 #
 # Clase general para el uso de las matrices
 # * mostrar ()
-# * [] (n)
+# * '[]' (n)
 # * Operadores +,-,*
 class Matriz
-	#Variable
-	attr_accessor :fi, :co
+	#Variable con el numero de filas
+	attr_accessor :fi
+	#Variable con el numero de columnas 
+	attr_accessor :co
 	
+	#Recibe el numero de filas y columnas de la matriz
 	def initialize (fi, co)
 		raise ArgumentError, 'El parametro debe ser entero' unless fi.is_a? Integer
 		raise ArgumentError, 'El parametro debe ser entero' unless co.is_a? Integer

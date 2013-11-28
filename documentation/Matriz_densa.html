@@ -200,7 +200,7 @@ las matrices densas.</p>
 
         <div class="method-description">
         
-        
+        <p>Variable que contiene los valores de la matriz</p>
         
         </div>
       </div>
@@ -227,7 +227,8 @@ las matrices densas.</p>
 
         <div class="method-description">
           
-          
+          <p>Recibe una matriz, la almacena en @m y llama a super con los valores de
+fila y columna</p>
           
           
             <div class="method-calls-super">
@@ -281,7 +282,7 @@ las matrices densas.</p>
           <div class="method-source-code" id="max-source">
             <pre><span class="ruby-comment"># File lib/prct09/matriz_densa.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
-        <span class="ruby-identifier">max</span> = <span class="ruby-value">-10000</span>
+        <span class="ruby-identifier">max</span> = <span class="ruby-ivar">@m</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
         <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@fi</span> 
                 <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@co</span>
                         <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max</span>) <span class="ruby-keyword">then</span>
@@ -322,7 +323,7 @@ las matrices densas.</p>
           <div class="method-source-code" id="min-source">
             <pre><span class="ruby-comment"># File lib/prct09/matriz_densa.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
-        <span class="ruby-identifier">min</span> = <span class="ruby-value">10000</span>
+        <span class="ruby-identifier">min</span> = <span class="ruby-ivar">@m</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
         <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">fi</span>
                 <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">co</span>
                         <span class="ruby-keyword">if</span> <span class="ruby-ivar">@m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span> <span class="ruby-keyword">then</span>

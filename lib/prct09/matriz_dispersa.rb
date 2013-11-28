@@ -10,7 +10,7 @@ require 'prct09/matriz.rb'
 # == Clase SpareVector
 #
 # Clase que contiene un hash.
-# * [] (i)
+# * '[]' (i)
 # * to_s ()
 # * keys ()
 class SparseVector 
@@ -44,15 +44,16 @@ end
 # == Clase Matriz_dispersa
 #
 # Clase concreta de Matriz para el uso de las matrices dispersas (mas de un 60% de ceros).
-# * [] (i)
+# * '[]' (i)
 # * max ()
 # * min ()
 # * to_den ()
 # * Operadores +,-,*
 class Matriz_dispersa < Matriz
-
+  #Variable con los indices hash y sus valores asociados
   attr_accessor :m
-
+  
+  #Recibe un hash y lo almacena en nuestra estructura, llama a super con el valor maximo de fila y columna	
   def initialize(h = {})
     fi,co= 0,0
     @m = Hash.new({})
@@ -120,7 +121,7 @@ class Matriz_dispersa < Matriz
 			end
 			return Matriz_densa.new(a)
 	 end
-
+	 #Operador resta optimizado para matrices dispersas, si el argumento no es Matriz_dispersa convierte la dispersa en densa y llama al operador de la superclase
 	 def -(o)
 		a = self.to_den
 		if o.class == Matriz_dispersa then
@@ -134,6 +135,7 @@ class Matriz_dispersa < Matriz
 			a-o
 		end
 	end
+#Operador suma optimizado para matrices dispersas, si el argumento no es Matriz_dispersa convierte la dispersa en densa y llama al operador de la superclase
   def +(o)
     a = self.to_den
     if o.class == Matriz_dispersa then
@@ -147,6 +149,7 @@ class Matriz_dispersa < Matriz
       a+o
     end
   end
+	#Convierte la matriz en densa y llama al operador de la superclase
 	def *(o)
 		a = self.to_den
 		if o.class == Matriz_dispersa then
